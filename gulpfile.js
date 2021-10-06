@@ -8,7 +8,7 @@ const notify = require("gulp-notify"); //エラー発生時にデスクトップ
 // style.scssの監視タスクを作成する
 gulp.task("scss", function () {
 	// ★ style.scssファイルを監視
-	return gulp.watch("./src/scss/*.scss", function () {
+	return gulp.watch("./src/**/*.scss", function () {
 		// style.scssの更新があった場合の処理
 
 		// style.scssファイルを取得
