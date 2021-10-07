@@ -22,7 +22,7 @@ drawArea.onmousemove = (e) => {
 };
 // console.log(drawFlg);
 function draw(x, y) {
-	console.log(drawFlg);
+	// console.log(drawFlg);
 	if (drawFlg) {
 		drawContext.beginPath();
 		drawContext.lineCap = "round";
