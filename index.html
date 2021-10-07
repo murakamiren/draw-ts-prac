@@ -10,7 +10,11 @@
 	<body>
 		<h1 class="ttl">お絵かきツール</h1>
 		<canvas class="draw-area" id="draw-area" width="500px" height="500px"></canvas>
-		<input type="button" value="全消し" id="delete-btn" />
+		<div class="setting-wrap">
+			<input type="button" value="全消し" id="delete-btn" />
+			<input type="range" name="" id="width-range" min="1" max="10" />
+			<label>線の太さ</label>
+		</div>
 		<script src="js/index.js"></script>
 	</body>
 </html>
