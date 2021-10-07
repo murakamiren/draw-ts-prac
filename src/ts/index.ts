@@ -2,6 +2,7 @@
 const drawArea = document.querySelector<HTMLCanvasElement>("#draw-area");
 // console.log(drawArea.getContext);
 const drawContext = drawArea.getContext("2d");
+const deleteBtn = document.querySelector("#delete-btn");
 let drawFlg: boolean = true;
 
 // console.log(drawArea.getBoundingClientRect());
@@ -34,3 +35,7 @@ function draw(x, y) {
 	}
 	drawContext.stroke();
 }
+
+deleteBtn.addEventListener("click", () => {
+	drawContext.clearRect(0, 0, 500, 500);
+});

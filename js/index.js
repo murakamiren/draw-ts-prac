@@ -2,6 +2,7 @@
 var drawArea = document.querySelector("#draw-area");
 // console.log(drawArea.getContext);
 var drawContext = drawArea.getContext("2d");
+var deleteBtn = document.querySelector("#delete-btn");
 var drawFlg = true;
 // console.log(drawArea.getBoundingClientRect());
 var rect = drawArea.getBoundingClientRect();
@@ -33,3 +34,6 @@ function draw(x, y) {
     }
     drawContext.stroke();
 }
+deleteBtn.addEventListener("click", function () {
+    drawContext.clearRect(0, 0, 500, 500);
+});
