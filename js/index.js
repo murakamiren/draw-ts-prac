@@ -9,17 +9,21 @@ var rect = drawArea.getBoundingClientRect();
 // console.log(Math.floor(rect.top));
 var rectTop = Math.floor(rect.top);
 var rectLeft = rect.left;
+console.log(drawFlg);
 drawArea.onmousedown = function () {
     drawFlg = false;
+    console.log(drawFlg);
 };
 drawArea.onmouseup = function () {
     drawFlg = true;
+    console.log(drawFlg);
 };
 drawArea.onmousemove = function (e) {
     draw(e.clientX - rectLeft, e.clientY - rectTop);
 };
 // console.log(drawFlg);
 function draw(x, y) {
+    console.log(drawFlg);
     // console.log(drawFlg);
     if (drawFlg) {
         drawContext.beginPath();
