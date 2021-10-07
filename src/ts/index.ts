@@ -10,7 +10,7 @@ drawArea.addEventListener("mousemove", (e) => {
 	// console.log(Math.floor(rect.top));
 	let rectTop: number = Math.floor(rect.top);
 	let rectLeft: number = rect.left;
-	console.log(e.clientX - rectLeft, e.clientY - rectTop);
+	// console.log(e.clientX - rectLeft, e.clientY - rectTop);
 
 	drawArea.onmousedown = () => {
 		drawFlg = true;
@@ -18,4 +18,14 @@ drawArea.addEventListener("mousemove", (e) => {
 	drawArea.onmouseup = () => {
 		drawFlg = false;
 	};
+	// console.log(drawFlg);
+	if (drawFlg) {
+		drawContext.lineCap = "round";
+		drawContext.lineJoin = "round";
+		drawContext.lineWidth = 5;
+		drawContext.strokeStyle = "tomato";
+		drawContext.beginPath();
+		drawContext.moveTo(e.clientX - rectLeft, e.clientY - rectTop);
+		drawContext.lineTo(e.clientX - rectLeft, e.clientY - rectTop);
+	}
 });

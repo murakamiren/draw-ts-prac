@@ -9,11 +9,21 @@ drawArea.addEventListener("mousemove", function (e) {
     // console.log(Math.floor(rect.top));
     var rectTop = Math.floor(rect.top);
     var rectLeft = rect.left;
-    console.log(e.clientX - rectLeft, e.clientY - rectTop);
+    // console.log(e.clientX - rectLeft, e.clientY - rectTop);
     drawArea.onmousedown = function () {
         drawFlg = true;
     };
     drawArea.onmouseup = function () {
         drawFlg = false;
     };
+    // console.log(drawFlg);
+    if (drawFlg) {
+        drawContext.lineCap = "round";
+        drawContext.lineJoin = "round";
+        drawContext.lineWidth = 5;
+        drawContext.strokeStyle = "tomato";
+        drawContext.beginPath();
+        drawContext.moveTo(e.clientX - rectLeft, e.clientY - rectTop);
+        drawContext.lineTo(e.clientX - rectLeft, e.clientY - rectTop);
+    }
 });
