@@ -6,8 +6,10 @@ var drawFlg = false;
 drawArea.addEventListener("mousemove", function (e) {
     // console.log(drawArea.getBoundingClientRect());
     var rect = drawArea.getBoundingClientRect();
-    // console.log(rect.left);
-    // console.log(e.clientX - rect.left, e.clientY - rect.top);
+    // console.log(Math.floor(rect.top));
+    var rectTop = Math.floor(rect.top);
+    var rectLeft = rect.left;
+    console.log(e.clientX - rectLeft, e.clientY - rectTop);
     drawArea.onmousedown = function () {
         drawFlg = true;
     };
