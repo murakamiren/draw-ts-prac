@@ -4,6 +4,7 @@ const drawArea = document.querySelector<HTMLCanvasElement>("#draw-area");
 const drawContext = drawArea.getContext("2d");
 const deleteBtn = document.querySelector<HTMLButtonElement>("#delete-btn");
 const widthRange = document.querySelector<HTMLInputElement>("#width-range");
+const widthValue = document.querySelector<HTMLElement>("#width-value");
 let setLineWidth: number = 1;
 let drawFlg: boolean = true;
 
@@ -13,8 +14,9 @@ let rect: DOMRect = drawArea.getBoundingClientRect();
 let rectTop: number = Math.floor(rect.top);
 let rectLeft: number = rect.left;
 
-widthRange.onmouseleave = () => {
+widthRange.onmouseup = () => {
 	setLineWidth = parseInt(widthRange.value);
+	widthValue.innerText = `線の太さ:${widthRange.value}`;
 };
 
 drawArea.onmousedown = () => {

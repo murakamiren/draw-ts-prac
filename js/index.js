@@ -4,6 +4,7 @@ var drawArea = document.querySelector("#draw-area");
 var drawContext = drawArea.getContext("2d");
 var deleteBtn = document.querySelector("#delete-btn");
 var widthRange = document.querySelector("#width-range");
+var widthValue = document.querySelector("#width-value");
 var setLineWidth = 1;
 var drawFlg = true;
 // console.log(drawArea.getBoundingClientRect());
@@ -11,8 +12,9 @@ var rect = drawArea.getBoundingClientRect();
 // console.log(Math.floor(rect.top));
 var rectTop = Math.floor(rect.top);
 var rectLeft = rect.left;
-widthRange.onmouseleave = function () {
+widthRange.onmouseup = function () {
     setLineWidth = parseInt(widthRange.value);
+    widthValue.innerText = "\u7DDA\u306E\u592A\u3055:" + widthRange.value;
 };
 drawArea.onmousedown = function () {
     drawFlg = false;
