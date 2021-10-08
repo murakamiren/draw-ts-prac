@@ -49,7 +49,7 @@ function draw(x, y) {
     }
     else {
         drawContext.lineTo(x, y);
-        console.log(setColor);
+        // console.log(setColor);
     }
     drawContext.stroke();
 }

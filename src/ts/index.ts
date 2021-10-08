@@ -54,7 +54,7 @@ function draw(x: number, y: number) {
 		drawContext.moveTo(x, y);
 	} else {
 		drawContext.lineTo(x, y);
-		console.log(setColor);
+		// console.log(setColor);
 	}
 	drawContext.stroke();
 }
