@@ -7,6 +7,7 @@ var widthRange = document.querySelector("#width-range");
 var widthValue = document.querySelector("#width-value");
 var colorPicker = document.querySelector("#color-picker");
 var saveBtn = document.querySelector("#save-btn");
+var saveBtnLink = document.querySelector("#save-btn-link");
 var eraserBtn = document.querySelector("#eraser");
 var setColor = "";
 var setLineWidth = 1;
@@ -61,8 +62,10 @@ colorPicker.addEventListener("change", function () {
     // console.log(setColor);
 });
 saveBtn.addEventListener("click", function () {
-    saveBtn.href = drawArea.toDataURL("image/jpeg", 0.8);
-    saveBtn.download = "saveImg.jpg";
+    console.log(saveBtnLink);
+    saveBtnLink.href = drawArea.toDataURL("image/jpeg");
+    saveBtnLink.download = "saveImg.jpg";
+    saveBtnLink.click();
 });
 eraserBtn.addEventListener("click", function () {
     setColor = "white";

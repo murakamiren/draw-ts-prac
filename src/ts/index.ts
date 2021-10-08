@@ -6,7 +6,8 @@ const deleteBtn = document.querySelector<HTMLSpanElement>("#delete-btn");
 const widthRange = document.querySelector<HTMLInputElement>("#width-range");
 const widthValue = document.querySelector<HTMLElement>("#width-value");
 const colorPicker = document.querySelector<HTMLInputElement>("#color-picker");
-const saveBtn = document.querySelector<HTMLAnchorElement>("#save-btn");
+const saveBtn = document.querySelector<HTMLSpanElement>("#save-btn");
+const saveBtnLink = document.querySelector<HTMLAnchorElement>("#save-btn-link");
 const eraserBtn = document.querySelector<HTMLSpanElement>("#eraser");
 
 let setColor: string = "";
@@ -69,8 +70,10 @@ colorPicker.addEventListener("change", () => {
 });
 
 saveBtn.addEventListener("click", () => {
-	saveBtn.href = drawArea.toDataURL("image/jpeg", 0.8);
-	saveBtn.download = "saveImg.jpg";
+	console.log(saveBtnLink);
+	saveBtnLink.href = drawArea.toDataURL("image/jpeg");
+	saveBtnLink.download = "saveImg.jpg";
+	saveBtnLink.click();
 });
 
 eraserBtn.addEventListener("click", () => {
