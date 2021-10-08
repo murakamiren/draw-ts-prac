@@ -6,3 +6,19 @@
 .draw-area {
   border: 1px solid #333;
 }
+
+.save-btn {
+  margin: 10px 0 0 0;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #333;
+}
+
+.save-btn-text {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  line-height: 30px;
+}

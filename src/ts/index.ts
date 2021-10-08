@@ -6,6 +6,7 @@ const deleteBtn = document.querySelector<HTMLButtonElement>("#delete-btn");
 const widthRange = document.querySelector<HTMLInputElement>("#width-range");
 const widthValue = document.querySelector<HTMLElement>("#width-value");
 const colorPicker = document.querySelector<HTMLInputElement>("#color-picker");
+const saveBtn = document.querySelector<HTMLAnchorElement>("#save-btn");
 
 let setColor: string = "";
 let setLineWidth: number = 1;
@@ -16,6 +17,9 @@ let rect: DOMRect = drawArea.getBoundingClientRect();
 // console.log(Math.floor(rect.top));
 let rectTop: number = Math.floor(rect.top);
 let rectLeft: number = rect.left;
+
+drawContext.fillStyle = "#fff";
+drawContext.fillRect(0, 0, 500, 500);
 
 widthRange.onmouseup = () => {
 	setLineWidth = parseInt(widthRange.value);
@@ -60,4 +64,9 @@ deleteBtn.addEventListener("click", () => {
 colorPicker.addEventListener("change", () => {
 	setColor = colorPicker.value;
 	// console.log(setColor);
+});
+
+saveBtn.addEventListener("click", () => {
+	saveBtn.href = drawArea.toDataURL("image/jpeg", 0.8);
+	saveBtn.download = "saveImg.jpg";
 });

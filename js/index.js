@@ -6,6 +6,7 @@ var deleteBtn = document.querySelector("#delete-btn");
 var widthRange = document.querySelector("#width-range");
 var widthValue = document.querySelector("#width-value");
 var colorPicker = document.querySelector("#color-picker");
+var saveBtn = document.querySelector("#save-btn");
 var setColor = "";
 var setLineWidth = 1;
 var drawFlg = true;
@@ -14,6 +15,8 @@ var rect = drawArea.getBoundingClientRect();
 // console.log(Math.floor(rect.top));
 var rectTop = Math.floor(rect.top);
 var rectLeft = rect.left;
+drawContext.fillStyle = "#fff";
+drawContext.fillRect(0, 0, 500, 500);
 widthRange.onmouseup = function () {
     setLineWidth = parseInt(widthRange.value);
     widthValue.innerText = "\u7DDA\u306E\u592A\u3055:" + widthRange.value;
@@ -54,4 +57,8 @@ deleteBtn.addEventListener("click", function () {
 colorPicker.addEventListener("change", function () {
     setColor = colorPicker.value;
     // console.log(setColor);
+});
+saveBtn.addEventListener("click", function () {
+    saveBtn.href = drawArea.toDataURL("image/jpeg", 0.8);
+    saveBtn.download = "saveImg.jpg";
 });
