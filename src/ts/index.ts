@@ -5,6 +5,10 @@ const drawContext = drawArea.getContext("2d");
 const deleteBtn = document.querySelector<HTMLButtonElement>("#delete-btn");
 const widthRange = document.querySelector<HTMLInputElement>("#width-range");
 const widthValue = document.querySelector<HTMLElement>("#width-value");
+const colorPicker = document.querySelector<HTMLInputElement>("#color-picker");
+const setColorBtn = document.querySelector<HTMLInputElement>("#set-color-btn");
+
+let setColor: string = "";
 let setLineWidth: number = 1;
 let drawFlg: boolean = true;
 
@@ -38,7 +42,7 @@ function draw(x: number, y: number) {
 		drawContext.lineCap = "round";
 		drawContext.lineJoin = "round";
 		drawContext.lineWidth = setLineWidth;
-		drawContext.strokeStyle = "tomato";
+		drawContext.strokeStyle = setColor;
 		drawContext.moveTo(x, y);
 	} else {
 		drawContext.lineTo(x, y);
@@ -48,6 +52,11 @@ function draw(x: number, y: number) {
 
 deleteBtn.addEventListener("click", () => {
 	drawContext.clearRect(0, 0, 500, 500);
+});
+
+setColorBtn.addEventListener("click", () => {
+	setColor = colorPicker.value;
+	console.log(setColor);
 });
 
 // console.log(setLineWidth);
