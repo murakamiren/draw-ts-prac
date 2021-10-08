@@ -6,7 +6,6 @@ var deleteBtn = document.querySelector("#delete-btn");
 var widthRange = document.querySelector("#width-range");
 var widthValue = document.querySelector("#width-value");
 var colorPicker = document.querySelector("#color-picker");
-var setColorBtn = document.querySelector("#set-color-btn");
 var setColor = "";
 var setLineWidth = 1;
 var drawFlg = true;
@@ -52,8 +51,7 @@ function draw(x, y) {
 deleteBtn.addEventListener("click", function () {
     drawContext.clearRect(0, 0, 500, 500);
 });
-setColorBtn.addEventListener("click", function () {
+colorPicker.addEventListener("change", function () {
     setColor = colorPicker.value;
-    console.log(setColor);
+    // console.log(setColor);
 });
-// console.log(setLineWidth);

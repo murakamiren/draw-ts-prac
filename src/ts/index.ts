@@ -6,7 +6,6 @@ const deleteBtn = document.querySelector<HTMLButtonElement>("#delete-btn");
 const widthRange = document.querySelector<HTMLInputElement>("#width-range");
 const widthValue = document.querySelector<HTMLElement>("#width-value");
 const colorPicker = document.querySelector<HTMLInputElement>("#color-picker");
-const setColorBtn = document.querySelector<HTMLInputElement>("#set-color-btn");
 
 let setColor: string = "";
 let setLineWidth: number = 1;
@@ -58,9 +57,7 @@ deleteBtn.addEventListener("click", () => {
 	drawContext.clearRect(0, 0, 500, 500);
 });
 
-setColorBtn.addEventListener("click", () => {
+colorPicker.addEventListener("change", () => {
 	setColor = colorPicker.value;
-	console.log(setColor);
+	// console.log(setColor);
 });
-
-// console.log(setLineWidth);
