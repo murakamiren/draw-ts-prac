@@ -31,7 +31,7 @@ drawArea.onmousemove = (e) => {
 	draw(e.clientX - rectLeft, e.clientY - rectTop);
 };
 // console.log(drawFlg);
-function draw(x, y) {
+function draw(x: number, y: number) {
 	// console.log(drawFlg);
 	if (drawFlg) {
 		drawContext.beginPath();
@@ -50,4 +50,4 @@ deleteBtn.addEventListener("click", () => {
 	drawContext.clearRect(0, 0, 500, 500);
 });
 
-console.log(setLineWidth);
+// console.log(setLineWidth);
