@@ -31,6 +31,10 @@ drawArea.onmouseup = () => {
 	drawFlg = true;
 	// console.log(drawFlg);
 };
+drawArea.onmouseleave = () => {
+	drawFlg = true;
+};
+
 drawArea.onmousemove = (e) => {
 	draw(e.clientX - rectLeft, e.clientY - rectTop);
 };

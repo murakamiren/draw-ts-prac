@@ -27,6 +27,9 @@ drawArea.onmouseup = function () {
     drawFlg = true;
     // console.log(drawFlg);
 };
+drawArea.onmouseleave = function () {
+    drawFlg = true;
+};
 drawArea.onmousemove = function (e) {
     draw(e.clientX - rectLeft, e.clientY - rectTop);
 };
