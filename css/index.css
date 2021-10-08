@@ -22,7 +22,7 @@
   -webkit-appearance: none;
   appearance: none;
   background-color: #eaeaea;
-  height: 2px;
+  height: 4px;
   border-radius: 6px;
 }
 .width-range[type=range]:focus::-moz-focus-outer, .width-range[type=range]:active {
