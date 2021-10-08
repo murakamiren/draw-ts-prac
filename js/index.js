@@ -62,7 +62,7 @@ colorPicker.addEventListener("change", function () {
     // console.log(setColor);
 });
 saveBtn.addEventListener("click", function () {
-    console.log(saveBtnLink);
+    // console.log(saveBtnLink);
     saveBtnLink.href = drawArea.toDataURL("image/jpeg");
     saveBtnLink.download = "saveImg.jpg";
     saveBtnLink.click();
