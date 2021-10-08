@@ -7,6 +7,7 @@ const widthRange = document.querySelector<HTMLInputElement>("#width-range");
 const widthValue = document.querySelector<HTMLElement>("#width-value");
 const colorPicker = document.querySelector<HTMLInputElement>("#color-picker");
 const saveBtn = document.querySelector<HTMLAnchorElement>("#save-btn");
+const eraserBtn = document.querySelector<HTMLInputElement>("#eraser");
 
 let setColor: string = "";
 let setLineWidth: number = 1;
@@ -53,6 +54,7 @@ function draw(x: number, y: number) {
 		drawContext.moveTo(x, y);
 	} else {
 		drawContext.lineTo(x, y);
+		console.log(setColor);
 	}
 	drawContext.stroke();
 }
@@ -69,4 +71,8 @@ colorPicker.addEventListener("change", () => {
 saveBtn.addEventListener("click", () => {
 	saveBtn.href = drawArea.toDataURL("image/jpeg", 0.8);
 	saveBtn.download = "saveImg.jpg";
+});
+
+eraserBtn.addEventListener("click", () => {
+	setColor = "white";
 });

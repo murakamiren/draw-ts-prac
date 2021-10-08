@@ -7,6 +7,7 @@ var widthRange = document.querySelector("#width-range");
 var widthValue = document.querySelector("#width-value");
 var colorPicker = document.querySelector("#color-picker");
 var saveBtn = document.querySelector("#save-btn");
+var eraserBtn = document.querySelector("#eraser");
 var setColor = "";
 var setLineWidth = 1;
 var drawFlg = true;
@@ -48,6 +49,7 @@ function draw(x, y) {
     }
     else {
         drawContext.lineTo(x, y);
+        console.log(setColor);
     }
     drawContext.stroke();
 }
@@ -61,4 +63,7 @@ colorPicker.addEventListener("change", function () {
 saveBtn.addEventListener("click", function () {
     saveBtn.href = drawArea.toDataURL("image/jpeg", 0.8);
     saveBtn.download = "saveImg.jpg";
+});
+eraserBtn.addEventListener("click", function () {
+    setColor = "white";
 });
