@@ -7,6 +7,28 @@
 	border: 1px solid #333;
 }
 
+.delete {
+	cursor: pointer;
+}
+
+.delete::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f2ed";
+	font-weight: 400;
+	font-size: 40px;
+}
+
+.eraser {
+	cursor: pointer;
+}
+
+.eraser::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f12d";
+	font-weight: 900;
+	font-size: 40px;
+}
+
 .save-btn {
 	margin: 10px 0 0 0;
 	width: 100px;

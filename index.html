@@ -6,17 +6,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>draw</title>
 		<link rel="stylesheet" href="css/index.css" />
+		<script src="https://kit.fontawesome.com/057ad237e7.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<h1 class="ttl">お絵かきツール</h1>
 		<canvas class="draw-area" id="draw-area" width="500px" height="500px"></canvas>
 		<div class="setting-wrap">
-			<input type="button" value="全消し" id="delete-btn" />
+			<!-- <input type="button" value="全消し" id="delete-btn" /> -->
+			<span id="delete-btn" class="delete"></span>
 			<input type="range" name="" id="width-range" value="5" min="1" max="10" />
 			<label id="width-value">線の太さ</label>
 			<input type="color" name="" id="color-picker" value="#000000" />
 			<label>色指定</label>
-			<input type="button" value="消しゴム" id="eraser" />
+			<!-- <input type="button" value="消しゴム" id="eraser" /> -->
+			<span id="eraser" class="eraser"></span>
 			<div class="save-btn"><a href="" id="save-btn" class="save-btn-text">保存</a></div>
 		</div>
 		<script src="js/index.js"></script>

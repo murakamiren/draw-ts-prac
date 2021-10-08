@@ -2,12 +2,12 @@
 const drawArea = document.querySelector<HTMLCanvasElement>("#draw-area");
 // console.log(drawArea.getContext);
 const drawContext = drawArea.getContext("2d");
-const deleteBtn = document.querySelector<HTMLButtonElement>("#delete-btn");
+const deleteBtn = document.querySelector<HTMLSpanElement>("#delete-btn");
 const widthRange = document.querySelector<HTMLInputElement>("#width-range");
 const widthValue = document.querySelector<HTMLElement>("#width-value");
 const colorPicker = document.querySelector<HTMLInputElement>("#color-picker");
 const saveBtn = document.querySelector<HTMLAnchorElement>("#save-btn");
-const eraserBtn = document.querySelector<HTMLInputElement>("#eraser");
+const eraserBtn = document.querySelector<HTMLSpanElement>("#eraser");
 
 let setColor: string = "";
 let setLineWidth: number = 1;
