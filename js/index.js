@@ -9,6 +9,8 @@ var colorPicker = document.querySelector("#color-picker");
 var saveBtn = document.querySelector("#save-btn");
 var saveBtnLink = document.querySelector("#save-btn-link");
 var eraserBtn = document.querySelector("#eraser");
+var backBtn = document.querySelector("#back-btn");
+var drawHistory = [];
 var setColor = "";
 var setLineWidth = 1;
 var drawFlg = true;
@@ -29,6 +31,7 @@ drawArea.onmousedown = function () {
 };
 drawArea.onmouseup = function () {
     drawFlg = true;
+    setDrawHistory();
     // console.log(drawFlg);
 };
 drawArea.onmouseleave = function () {
@@ -69,4 +72,13 @@ saveBtn.addEventListener("click", function () {
 });
 eraserBtn.addEventListener("click", function () {
     setColor = "white";
+});
+function setDrawHistory() {
+    drawHistory.push(drawContext.getImageData(0, 0, 500, 500));
+    console.log(drawHistory);
+}
+backBtn.addEventListener("click", function () {
+    drawHistory.pop();
+    var last = drawHistory.slice(-1)[0];
+    drawContext.putImageData(last, 0, 0);
 });

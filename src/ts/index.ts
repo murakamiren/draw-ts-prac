@@ -9,6 +9,9 @@ const colorPicker = document.querySelector<HTMLInputElement>("#color-picker");
 const saveBtn = document.querySelector<HTMLSpanElement>("#save-btn");
 const saveBtnLink = document.querySelector<HTMLAnchorElement>("#save-btn-link");
 const eraserBtn = document.querySelector<HTMLSpanElement>("#eraser");
+const backBtn = document.querySelector<HTMLInputElement>("#back-btn");
+
+const drawHistory = [];
 
 let setColor: string = "";
 let setLineWidth: number = 1;
@@ -34,6 +37,7 @@ drawArea.onmousedown = () => {
 };
 drawArea.onmouseup = () => {
 	drawFlg = true;
+	setDrawHistory();
 	// console.log(drawFlg);
 };
 drawArea.onmouseleave = () => {
@@ -78,4 +82,15 @@ saveBtn.addEventListener("click", () => {
 
 eraserBtn.addEventListener("click", () => {
 	setColor = "white";
+});
+
+function setDrawHistory() {
+	drawHistory.push(drawContext.getImageData(0, 0, 500, 500));
+	console.log(drawHistory);
+}
+
+backBtn.addEventListener("click", () => {
+	drawHistory.pop();
+	const last = drawHistory.slice(-1)[0];
+	drawContext.putImageData(last, 0, 0);
 });
