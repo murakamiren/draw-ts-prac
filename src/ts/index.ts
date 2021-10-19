@@ -26,6 +26,9 @@ let rectLeft: number = rect.left;
 drawContext.fillStyle = "#fff";
 drawContext.fillRect(0, 0, 500, 500);
 
+setLineWidth = parseInt(widthRange.value);
+widthValue.innerText = `線の太さ:${widthRange.value}`;
+
 widthRange.onmouseup = () => {
 	setLineWidth = parseInt(widthRange.value);
 	widthValue.innerText = `線の太さ:${widthRange.value}`;

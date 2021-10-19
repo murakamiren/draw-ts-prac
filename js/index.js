@@ -21,6 +21,8 @@ var rectTop = Math.floor(rect.top);
 var rectLeft = rect.left;
 drawContext.fillStyle = "#fff";
 drawContext.fillRect(0, 0, 500, 500);
+setLineWidth = parseInt(widthRange.value);
+widthValue.innerText = "\u7DDA\u306E\u592A\u3055:" + widthRange.value;
 widthRange.onmouseup = function () {
     setLineWidth = parseInt(widthRange.value);
     widthValue.innerText = "\u7DDA\u306E\u592A\u3055:" + widthRange.value;
