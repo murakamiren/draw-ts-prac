@@ -80,5 +80,10 @@ function setDrawHistory() {
 backBtn.addEventListener("click", function () {
     drawHistory.pop();
     var last = drawHistory.slice(-1)[0];
-    drawContext.putImageData(last, 0, 0);
+    if (drawHistory.length > 0) {
+        drawContext.putImageData(last, 0, 0);
+    }
+    else {
+        drawContext.clearRect(0, 0, 500, 500);
+    }
 });
